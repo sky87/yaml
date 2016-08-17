@@ -1,5 +1,10 @@
 # YAML support for the Go language
 
+Fork Changes
+------------
+
+* Map keys decoding has been made case insensitive by default
+
 Introduction
 ------------
 

@@ -7,6 +7,7 @@ import (
 	"math"
 	"reflect"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -625,7 +626,7 @@ func (d *decoder) mappingStruct(n *node, out reflect.Value) (good bool) {
 		if !d.unmarshal(ni, name) {
 			continue
 		}
-		if info, ok := sinfo.FieldsMap[name.String()]; ok {
+		if info, ok := sinfo.FieldsMap[strings.ToLower(name.String())]; ok {
 			var field reflect.Value
 			if info.Inline == nil {
 				field = out.Field(info.Num)
